@@ -3,15 +3,15 @@
 
 int main(void)
 {
-  int flag = 1;
-  int y; // y에 변수의 범위 주의(지역변수의 범위) 
-  while(flag!=0)
+  int i;
+  //여기에 int temp=1 선언해도 결과는 동일 
+  for (i=0; i<5; i++)
   {
-    int y;
-    y = 3;
-    flag = 0;
+    int static temp=1; //temp=1~5까지 출력되게 수정 
+    printf("temp=%d\n", temp);
+    temp++;
   }
-  y = 4;             
+            
   system("PAUSE");	
   return 0;
 }
