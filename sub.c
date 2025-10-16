@@ -1,4 +1,4 @@
-extern int all_files;
+extern int all_files; //extern¿∏∑Œ ø¨∞·µ  
 void sub(void)
 {
   all_files=10;    
