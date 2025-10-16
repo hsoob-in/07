@@ -11,8 +11,7 @@ int main(void)
     y = 3;
     flag = 0;
   }
-  y = 4;
-                
+  y = 4;             
   system("PAUSE");	
   return 0;
 }
