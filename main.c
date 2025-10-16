@@ -1,17 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int inc(int counter); 
+int counter;
+
 int main(void)
 {
-  int i;
-  //여기에 int temp=1 선언해도 결과는 동일 
-  for (i=0; i<5; i++)
-  {
-    int static temp=1; //temp=1~5까지 출력되게 수정 
-    printf("temp=%d\n", temp);
-    temp++;
-  }
-            
+  int i=10;
+  printf("함수 호출전 i=%d\n", i);
+  
+  i = inc(i); //반환값을 i에다가 집어넣는 효과 
+  
+  printf("함수 호출후 i=%d\n", i);
+  
   system("PAUSE");	
   return 0;
+}
+  int inc(int counter)
+{        
+  counter++; //매개변수는 함수의 지역변수이기 때문에 호출이 안됨 
+  return counter;
 }
