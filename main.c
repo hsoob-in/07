@@ -1,22 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void f(void);
 
-int i;
+void sub(void)
+{        
+  int auto_count = 0; //초기화됨(자동할당) 
+  static int static_count = 0; //static 변수는 값을 계속 저장함(정적할당) 
+  auto_count++;
+  static_count++;
+  
+  printf("auto_count = %d\n", auto_count);
+  printf("static_count = %d\n", static_count);
+
+}
+
 int main(void)
 {
-  for(i=0; i<5; i++)
-  {
-    f(); //한 번만 실행됨, 같은 전역 변수를 사용하고 있음
-    printf("\n"); 
-  }
+  int i;
+  for(i=0; i<3; i++)
+  sub();
+  
   system("PAUSE");
   return 0;
 }
-void f(void)
-{        
-  int j;
-  for (j=0; j<10; j++)
-  printf("#");
-}
+
