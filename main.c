@@ -1,23 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int inc(int counter); 
-int counter;
+void f(void);
 
+int i;
 int main(void)
 {
-  int i=10;
-  printf("함수 호출전 i=%d\n", i);
-  
-  i = inc(i); //반환값을 i에다가 집어넣는 효과 
-  
-  printf("함수 호출후 i=%d\n", i);
-  
-  system("PAUSE");	
+  for(i=0; i<5; i++)
+  {
+    f(); //한 번만 실행됨, 같은 전역 변수를 사용하고 있음
+    printf("\n"); 
+  }
+  system("PAUSE");
   return 0;
 }
-  int inc(int counter)
+void f(void)
 {        
-  counter++; //매개변수는 함수의 지역변수이기 때문에 호출이 안됨 
-  return counter;
+  int j;
+  for (j=0; j<10; j++)
+  printf("#");
 }
